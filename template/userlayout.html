@@ -1,0 +1,28 @@
+{% extends "userbase.html" %}
+
+{% block content %}
+    <div id="searchResults">
+        <div class="row">
+            {% for d in data %}
+                <div class="col-sm-3 m-2">
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="{{ d.image_url }}" alt="{{ d.name }}">
+                      
+                      <div class="card-body">
+                        <h5 class="card-title">{{ d.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ d.email }}</h6>
+                        {% if d.profile_data %}
+                            <p class="card-text">{{ d.about_me }}</p>
+                        {% else %}
+                            <p class="card-text">No profile data available.</p>
+                        {% endif %}
+                        <a href="/user/friendprofile/{{d.name}}" class="btn btn-primary">Profile</a>
+                      </div>
+
+                    </div>
+                </div>  
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+

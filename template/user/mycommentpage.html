@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for comm in comment %}
+    	<div class="media border p-3" style = "border:2px solid gray; border-radius: 8%; width:80%; background-color: rgba(0, 204, 102,0.4) ;padding:20px" >
+        
+	        <div class="media-body" style="position: relative;padding-left: 19%;">
+	          <h2>Posted BY: <span style="color: rgb(102,102,0)">{{comm.posted_by}}</span></h2>
+	          <p>On: <small>{{comm.posted_on}}</small></p>
+	          <p>{{comm.comment}}</p>
+	            
+	        </div>
+        </div>
+      	<hr/>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card" style="background-color: rgba(0,204,102,0.2)">
+      <img src="{{image_url}}" alt="John" style="width:400px;">
+      <h1>{{user}}</h1>
+      
+      
+      <div style="margin: 24px ;">
+        <h1><span style="color: rgb(102,0,51)">Nick Names</span> :  {{nick_names}}</h1>
+        <h1><span style="color: rgb(102,0,51)">Contact:</span>{{contact_no}}</h1>
+        <h1><span style="color: rgb(102,0,51)">About Me:</span>{{about_me}}</h1>
+        <h1><span style="color: rgb(102,0,51)">Freq Used Words:</span>{{frequently_uttered_words}}</h1>
+      </div>
+      <p><button onclick="window.location.href='/user/commentpage/{{user}}'">write on his/her page</button></p>
+    </div>
+{% endblock content %}
